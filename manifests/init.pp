@@ -46,8 +46,11 @@ class sriman {
 
 $wlc_msg = hiera('wlc_msg', nil)
 
-if !defined("${wlc_msg}") {
-   class { "Hello ${wlc_msg}": }
+if defined("$wlc_msg") {
+   notify { "Hello $wlc_msg": }
+}
+else {
+   notice('wlc_msg not defined')
 }
 
 }
