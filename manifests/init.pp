@@ -53,4 +53,8 @@ else {
    notice('wlc_msg not defined')
 }
 
+tomcat::install { '/opt/tomcat':
+  source_url => 'https://www-us.apache.org/dist/tomcat/tomcat-8/v8.5.14/bin/apache-tomcat-8.5.14.tar.gz',
+}
+
 }
